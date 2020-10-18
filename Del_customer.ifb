@@ -1,0 +1,10 @@
+[Siebel Interface Manager]
+
+PROCESS = DeleteCustomer
+
+[DeleteCustomer]
+TYPE = DELETE
+BATCH = 10000
+TABLE = EIM_ACCOUNT
+DELETE MATCHES = S_ORG_EXT, (LOC LIKE '$STORE_NUM%' AND INT_ORG_FLG = 'N')
+CASCADE DELETE ONLY = FALSE
